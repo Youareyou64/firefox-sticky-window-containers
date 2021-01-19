@@ -48,20 +48,11 @@ const updateLastCookieStoreId = function(tab) {
 };
 
 const isPrivilegedURL = function(url) {
-  return url == 'about:config' ||
-    url == 'about:debugging' ||
-    url == 'about:addons' ||
-    url == 'about:home' ||
-    url == 'about:logins' ||
+  return url.startsWith('about:') ||
     url.startsWith('chrome:') ||
     url.startsWith('javascript:') ||
     url.startsWith('data:') ||
-    url.startsWith('file:') ||
-    url.startsWith('moz-extension:') ||
-    url.startsWith('about:certificate') ||
-    url.startsWith('about:logins') ||
-    url.startsWith('about:preferences') ||
-    url.startsWith('about:config');
+    url.startsWith('file:');
 }
 
 // Event flow is:
